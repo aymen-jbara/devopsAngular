@@ -5,6 +5,6 @@ COPY . .
 ##RUN npm run build
 
 FROM nginx:alpine
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+#COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY /var/lib/jenkins/workspace/DevopsAngular /usr/share/nginx/html
