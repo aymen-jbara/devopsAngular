@@ -5,4 +5,4 @@ RUN npm install
 RUN npm run build
 
 FROM nginx:alpine
-COPY --from=node /app/dist/angular-app /usr/share/nginx/html
+COPY /app/dist/angular-app /usr/share/nginx/html
