@@ -5,4 +5,4 @@ RUN npm install
 RUN npm run build
 
 FROM nginx:alpine
-COPY /var/lib/jenkins/workspace/devops_angular /usr/share/nginx/html
+COPY /var/lib/jenkins/workspace/angularDevops /usr/share/nginx/html
