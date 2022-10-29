@@ -11,7 +11,7 @@ pipeline {
             }
               stage('Build Docker Image') {
                  steps {
-                 sh 'docker build -t aymenjbara/dockerfile_Angular:2.2.2 .'
+                 sh 'docker build -t aymenjbara/crud-tuto-front:2.2.2 .'
                  }
               }
 
@@ -20,7 +20,7 @@ pipeline {
                      withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
                      sh "docker login -u aymenjbara -p ${DockerhubPWS}"
                      }
-                     sh 'docker push aymenjbara/dockerfile_Angular:2.2.2'
+                     sh 'docker push aymenjbara/crud-tuto-front:2.2.2'
                    }
               }
           }
