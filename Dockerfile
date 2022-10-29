@@ -1,4 +1,4 @@
-FROM node:latest as builder
+FROM node
 WORKDIR /app
 COPY . .
 RUN npm intall
