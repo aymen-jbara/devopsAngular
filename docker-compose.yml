@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+  dockerfile_angular:
+    depends_on:
+      - dockerfile_spring
+    container_name: dockerfile_angular
+
+    ports:
+      - '4200:80'
+    image: aymenjbara/dockerfile_angular:2.2.2

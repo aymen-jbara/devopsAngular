@@ -4,5 +4,6 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-#FROM nginx:alpine
-#COPY /var/lib/jenkins/workspace/DevopsAngular /usr/share/nginx/html
+FROM nginx:alpine
+COPY /etc/nginx/etc/conf.d/default.conf /etc/nginx/conf/default.conf
+COPY /var/lib/jenkins/workspace/DevopsAngular /usr/share/nginx/html
