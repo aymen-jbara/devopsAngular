@@ -6,4 +6,4 @@ RUN npm run build
 
 FROM nginx:alpine
 COPY /src/nginx/etc/conf.d/default.conf /etc/nginx/conf/default.conf
-COPY --from=build /usr/local/app/dist/DevopsAngular /usr/share/nginx/html
+COPY /usr/local/app/dist/DevopsAngular /usr/share/nginx/html
