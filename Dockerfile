@@ -1,5 +1,4 @@
 FROM node:16.13.0-alpine
-RUN mkdir /usr/local/app/
 WORKDIR /usr/local/app/
 COPY ./ /usr/local/app/
 RUN npm install
