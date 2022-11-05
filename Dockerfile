@@ -6,4 +6,4 @@ RUN npm run build
 
 FROM nginx:alpine
 COPY /src/nginx/etc/conf.d/default.conf /etc/nginx/conf/default.conf
-COPY /dist/crud-tuto-Front /usr/share/nginx/html
+COPY app/dist/crud-tuto-Front /usr/share/nginx/html
