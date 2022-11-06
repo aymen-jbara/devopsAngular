@@ -1,7 +1,7 @@
 version: "3.4"
 
 services:
-  mysql-container3:
+  mysql-container1:
     container_name: mysql-container3
     ports:
       - '3306:3306'
@@ -12,18 +12,18 @@ services:
     volumes:
       - mysql-container3:/var/lib/mysql:rw
     image: 'mysql:latest'
-    dockerfile_spring:
-      depends_on:
-        - mysql-container3
-      container_name: dockerfile_spring
-      ports:
-        - '8089:8089'
-      image: aymenjbara/dockerfile_spring:2.2.4
-
-  dockerfile_angular:
+  dockerfile_spring1:
     depends_on:
-      - dockerfile_spring
-    container_name: dockerfile_angular
+      - mysql-container1
+    container_name: dockerfile_spring1
+    ports:
+      - '8089:8089'
+    image: aymenjbara/dockerfile_spring:2.2.4
+
+  dockerfile_angular1:
+    depends_on:
+      - dockerfile_spring1
+    container_name: dockerfile_angular1
 
     ports:
       - '4200:80'
