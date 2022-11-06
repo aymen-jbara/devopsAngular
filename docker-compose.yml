@@ -12,7 +12,7 @@ services:
     volumes:
       - mysql-containerFinal:/var/lib/mysql:rw
     image: 'mysql:latest'
-    dockerfile_springFinal:
+  dockerfile_springFinal:
       depends_on:
         - mysql-containerFinal
       container_name: dockerfile_springFinal
