@@ -1,12 +1,33 @@
 version: "3.4"
 
 services:
+  mysql-containerFinal:
+    container_name: mysql-containerFinal
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_DATABASE=1
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    restart: always
+    volumes:
+      - mysql-containerFinal:/var/lib/mysql:rw
+    image: 'mysql:latest'
+    dockerfile_springFinal:
+      depends_on:
+        - mysql-containerFinal
+      container_name: dockerfile_springFinal
+      ports:
+        - '8089:8089'
+      image: aymenjbara/dockerfile_spring:2.2.4
 
-  dockerfile_angular3:
-
-    container_name: dockerfile_angular3
+  dockerfile_angularFinal:
+    depends_on:
+      - dockerfile_springFinal
+    container_name: dockerfile_angularFinal
 
     ports:
       - '4200:80'
     image: aymenjbara/dockerfile_angular:2.2.2
 
+volumes:
+  mysql-containerFinal: { }
