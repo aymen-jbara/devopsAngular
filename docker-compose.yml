@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   mysql-container1:
-    container_name: mysql-container3
+    container_name: mysql-container1
     ports:
       - '3306:3306'
     environment:
@@ -10,7 +10,7 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
     restart: always
     volumes:
-      - mysql-container3:/var/lib/mysql:rw
+      - mysql-container1:/var/lib/mysql:rw
     image: 'mysql:latest'
   dockerfile_spring1:
     depends_on:
@@ -30,4 +30,4 @@ services:
     image: aymenjbara/dockerfile_angular:2.2.2
 
 volumes:
-  mysql-container3: { }
+  mysql-container1: { }
